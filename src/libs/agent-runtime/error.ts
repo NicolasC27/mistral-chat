@@ -26,6 +26,8 @@ export const AgentRuntimeErrorType = {
   InvalidOllamaArgs: 'InvalidOllamaArgs',
   OllamaBizError: 'OllamaBizError',
 
+  MistralBizError: 'MistralBizError',
+
   InvalidPerplexityAPIKey: 'InvalidPerplexityAPIKey',
   PerplexityBizError: 'PerplexityBizError',
 

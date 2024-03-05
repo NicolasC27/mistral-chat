@@ -99,7 +99,6 @@ export class LobeZhipuAI implements LobeRuntimeAI {
     };
   }
 
-  // TODO: 临时处理，后续需要移除
   private transformMessage = (message: OpenAIChatMessage): OpenAIChatMessage => {
     return {
       ...message,

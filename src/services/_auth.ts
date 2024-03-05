@@ -14,6 +14,12 @@ export const getProviderAuthPayload = (provider: string) => {
       return { apiKey: modelProviderSelectors.moonshotAPIKey(useGlobalStore.getState()) };
     }
 
+    case ModelProvider.Mistral: {
+      return {
+        apiKey: modelProviderSelectors.mistralAPIKey(useGlobalStore.getState()),
+      };
+    }
+
     case ModelProvider.Google: {
       return { apiKey: modelProviderSelectors.googleAPIKey(useGlobalStore.getState()) };
     }

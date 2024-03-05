@@ -95,6 +95,20 @@ export default {
         title: 'API Key',
       },
     },
+    Mistral: {
+      endpoint: {
+        desc: '从 Mistral 门户检查资源时，可在“密钥和终结点”部分中找到此值',
+        placeholder: 'https://api.infomaniak.com/1/llm/{product_id}\n',
+        title: 'Mistral API 地址',
+      },
+      title: '月之暗面',
+
+      token: {
+        desc: '填入来自 Mistral AI 的 API Key',
+        placeholder: 'Mistral AI API Key',
+        title: 'API Key',
+      },
+    },
     Moonshot: {
       title: '月之暗面',
       token: {

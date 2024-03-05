@@ -5,6 +5,7 @@ import {
   BedrockProvider,
   GoogleProvider,
   LOBE_DEFAULT_MODEL_LIST,
+  MistralProvider,
   MoonshotProvider,
   OllamaProvider,
   OpenAIProvider,
@@ -28,6 +29,7 @@ const openAIAPIKey = (s: GlobalStore) => openAIConfig(s).OPENAI_API_KEY;
 const openAIProxyUrl = (s: GlobalStore) => openAIConfig(s).endpoint;
 
 const enableZhipu = (s: GlobalStore) => modelProvider(s).zhipu.enabled;
+
 const zhipuAPIKey = (s: GlobalStore) => modelProvider(s).zhipu.apiKey;
 const zhipuProxyUrl = (s: GlobalStore) => modelProvider(s).zhipu.endpoint;
 
@@ -43,6 +45,11 @@ const azureConfig = (s: GlobalStore) => modelProvider(s).azure;
 
 const enableMoonshot = (s: GlobalStore) => modelProvider(s).moonshot.enabled;
 const moonshotAPIKey = (s: GlobalStore) => modelProvider(s).moonshot.apiKey;
+
+const enableMistral = (s: GlobalStore) => modelProvider(s).mistral.enabled;
+const mistralAPIKey = (s: GlobalStore) => modelProvider(s).mistral.apiKey;
+const mistralConfig = (s: GlobalStore) => modelProvider(s).mistral;
+const mistralProxyUrl = (s: GlobalStore) => modelProvider(s).mistral.endpoint;
 
 const enableOllamaConfigInSettings = (s: GlobalStore) =>
   s.serverConfig.languageModel?.ollama?.enabled || false;
@@ -135,7 +142,12 @@ const modelSelectList = (s: GlobalStore): ModelProviderCard[] => {
       ...OpenAIProvider,
       chatModels,
     },
+    // {
+    //   ...MistralProvider,
+    //   chatModels,
+    // },
     // { ...azureModelList(s), enabled: enableAzure(s) },
+    { ...MistralProvider, enabled: enableMistral(s) },
     { ...ZhiPuProvider, enabled: enableZhipu(s) },
     { ...MoonshotProvider, enabled: enableMoonshot(s) },
     { ...GoogleProvider, enabled: enableGoogle(s) },
@@ -213,6 +225,12 @@ export const modelProviderSelectors = {
   enableOllamaConfigInSettings,
   enableOllama,
   ollamaProxyUrl,
+
+  // Mistral
+  enableMistral,
+  mistralConfig,
+  mistralAPIKey,
+  mistralProxyUrl,
 
   // Perplexity
   enablePerplexity,

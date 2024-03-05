@@ -35,6 +35,12 @@ export interface MoonshotConfig {
   enabled: boolean;
 }
 
+export interface MistralConfig {
+  apiKey?: string;
+  enabled: boolean;
+  endpoint?: string;
+}
+
 export interface GoogleConfig {
   apiKey?: string;
   enabled: boolean;
@@ -70,6 +76,7 @@ export interface GlobalLLMConfig {
   azure: AzureOpenAIConfig;
   bedrock: AWSBedrockConfig;
   google: GoogleConfig;
+  mistral: MistralConfig;
   moonshot: MoonshotConfig;
   ollama: OllamaConfig;
   openAI: OpenAIConfig;

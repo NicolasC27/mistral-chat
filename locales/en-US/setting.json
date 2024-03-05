@@ -102,6 +102,19 @@
         "title": "API Key"
       }
     },
+    "Mistral": {
+      "title": "Mistral",
+      "token": {
+        "desc": "Enter the API Key from Mistral AI",
+        "placeholder": "Mistral AI API Key",
+        "title": "API Key"
+      },
+      "endpoint": {
+        "desc": "Endpoint",
+        "placeholder": "https://api.infomaniak.com/1/llm/{product_id}\n",
+        "title": "Endpoint API"
+      }
+    },
     "Ollama": {
       "checker": {
         "desc": "Check if the proxy address is filled in correctly"

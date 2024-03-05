@@ -107,6 +107,10 @@ export default {
         description: '输入你的 Google API Key 即可开始会话。应用不会记录你的 API Key',
         title: '使用自定义 Google API Key',
       },
+      Mistral: {
+        description: '输入你的 Mistral API Key 即可开始会话。应用不会记录你的 API Key',
+        title: '使用自定义 Mistral API Key',
+      },
       Moonshot: {
         description: '输入你的 Moonshot AI API Key 即可开始会话。应用不会记录你的 API Key',
         title: '使用自定义 Moonshot AI API Key',

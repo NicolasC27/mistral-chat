@@ -43,6 +43,13 @@ declare global {
 
       // Ollama Provider;
       OLLAMA_PROXY_URL?: string;
+
+      // Mistral Provider;
+      MISTRAL_API_KEY?: string;
+      MISTRAL_PROXY_URL?: string;
+      MISTRAL_ENDPOINT?: string;
+
+      DEBUG_CHAT_COMPLETION?: string;
     }
   }
 }
@@ -62,6 +69,8 @@ export const getProviderConfig = () => {
   const PERPLEXITY_API_KEY = process.env.PERPLEXITY_API_KEY || '';
 
   const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || '';
+
+  const MISTRAL_API_KEY = process.env.MISTRAL_API_KEY || '';
 
   // region format: iad1,sfo1
   let regions: string[] = [];
@@ -83,6 +92,10 @@ export const getProviderConfig = () => {
 
     ENABLED_GOOGLE: !!GOOGLE_API_KEY,
     GOOGLE_API_KEY,
+
+    ENABLE_MISTRAL: !!MISTRAL_API_KEY,
+    MISTRAL_API_KEY: process.env.MISTRAL_API_KEY,
+    MISTRAL_ENDPOINT: process.env.MISTRAL_ENDPOINT,
 
     ENABLED_PERPLEXITY: !!PERPLEXITY_API_KEY,
     PERPLEXITY_API_KEY,

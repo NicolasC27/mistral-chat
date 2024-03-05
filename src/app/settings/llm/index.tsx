@@ -11,6 +11,7 @@ import Footer from '../features/Footer';
 import Anthropic from './Anthropic';
 import Bedrock from './Bedrock';
 import Google from './Google';
+import Mistral from './Mistral';
 import Moonshot from './Moonshot';
 import Ollama from './Ollama';
 import OpenAI from './OpenAI';
@@ -29,6 +30,7 @@ export default memo<{ showOllama: boolean }>(({ showOllama }) => {
       <Moonshot />
       <Google />
       <Bedrock />
+      <Mistral />
       <Perplexity />
       <Anthropic />
       {showOllama && <Ollama />}

@@ -13,6 +13,7 @@ import {
   LobeAzureOpenAI,
   LobeBedrockAI,
   LobeGoogleAI,
+  LobeMistralAI,
   LobeMoonshotAI,
   LobeOllamaAI,
   LobeOpenAI,
@@ -122,6 +123,11 @@ class AgentRuntime {
         break;
       }
 
+      case ModelProvider.Mistral: {
+        runtimeModel = this.initMistral(payload);
+        break;
+      }
+
       case ModelProvider.Azure: {
         runtimeModel = this.initAzureOpenAI(payload);
         break;
@@ -187,6 +193,14 @@ class AgentRuntime {
       baseURL,
       useAzure,
     });
+  }
+
+  private static initMistral(payload: JWTPayload) {
+    const apiKey = payload?.apiKey;
+    const endpoint = payload?.endpoint;
+    const apiVersion = payload?.azureApiVersion;
+    // @ts-ignore
+    return new LobeMistralAI(apiKey, endpoint, apiVersion);
   }
 
   private static initAzureOpenAI(payload: JWTPayload) {

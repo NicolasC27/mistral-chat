@@ -86,6 +86,7 @@
     "@lobehub/icons": "^1.13.0",
     "@lobehub/tts": "latest",
     "@lobehub/ui": "^1.129.2",
+    "@mistralai/mistralai": "^0.0.10",
     "@vercel/analytics": "^1",
     "ahooks": "^3",
     "ai": "^3.0.0",
